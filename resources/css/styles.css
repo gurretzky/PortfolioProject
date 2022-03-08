@@ -11,18 +11,31 @@ body {
     grid-template-rows: 3.5rem 1fr;
     gap: 0.5rem;
 }
+a:visited {
+    color: black;
+}
 
 /* Header */
 header {
-    grid-column: 2 / 12;
+    grid-column: 4 / 10;
     margin: 0.5rem;
+    grid-row: 1 / span 1;
 }
 header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-header nav ul li {
+header a {
+    text-decoration: none;
+}
+header a:hover {
+    color: darkred;
+}
+header li:hover {
+    background-color: lightgray;
+}
+header > nav > ul > li {
     display: inline;
     border: 1px solid black;
     border-radius: 10px;
@@ -32,10 +45,63 @@ header nav ul li {
 
 /* Main */
 main {
-    grid-column: 2 / 12;
+    grid-column: 4 / 10;
     grid-row-start: 2;
     display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+}
+#about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1.625rem 1fr;
+}
+#about h2 {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+}
+#about p {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+}
+#about figure {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    display: flex;
+    justify-content: space-around;
+}
+#about img {
+    width: 100%;
+    max-height: 15rem;
+    max-width: 15rem;
+    border-radius: 25px;
+}
+#projects li {
+    list-style: none;
+}
+#projects li::before {
+    content: "\00BB";
+}
+#projects a {
+    color: black;
+    text-decoration: none;
+}
+#projects a:hover {
+    background-color: red;
+}
+#skills ul {
+    list-style: none;
+    padding: 0;
     
+}
+#skills li {
+    display: inline;
+}
+#skills img {
+    height: 5rem;
+    width: 5rem;
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
 /* Footer */
