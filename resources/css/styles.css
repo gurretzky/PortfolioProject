@@ -20,6 +20,7 @@ header {
     grid-column: 4 / 10;
     margin: 0.5rem;
     grid-row: 1 / span 1;
+    
 }
 header nav {
     display: flex;
@@ -106,9 +107,40 @@ main {
 
 /* Footer */
 footer {
+    background-color: white;
     position: fixed;
     bottom: 0;
     width: 100%;
     z-index: 9;
     text-align: center;
+}
+
+/* Media rules */
+@media only screen and (max-width: 810px) {
+    header,main {
+        grid-column: 2 / 12;
+    }
+}
+@media only screen and (max-width: 545px) {
+    html {
+        font-size: 20px;
+    }
+    body {
+        grid-template-columns: 1fr;
+    }
+    header,main {
+        grid-column: 1;
+        margin: 0.5rem;
+    }
+    header nav {
+        display: block;
+    }
+    header h1, header ul {
+        width:100%;
+        padding:0;
+    }
+    #about img {
+        max-height: 9rem;
+        max-width: 9rem;
+    }
 }
